@@ -3,7 +3,7 @@ import Header from './components/Header'
 import About from './components/About'
 import Use from './components/Use'
 import Predict from './components/predict'
-import Footer from './components/footer'
+import Footer from './components/Footer'
 
 function App() {
 
