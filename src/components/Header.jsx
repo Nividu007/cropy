@@ -23,7 +23,7 @@ export default function Header() {
             <div className="container mx-auto flex flex-col gap-4 px-4 text-center sm:flex-row sm:items-center sm:justify-between sm:gap-0 lg:px-8 xl:max-w-7xl">
                 <div className="flex items-center gap-2">
                 <img
-                    src="/assets/logo.png"
+                    src="/logo.png"
                     alt="CropY Logo"
                     className="h-8 w-8"
                 />
