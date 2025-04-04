@@ -1,4 +1,18 @@
 export default function Header() {
+    const scrollToSection = (sectionId) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            const headerOffset = 80; // height of your fixed header
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+        }
+    };
+
     return (
       <>
         {/* Hero Section: Centered with Simple Header */}
@@ -25,22 +39,25 @@ export default function Header() {
                 </div>
                 <nav className="space-x-3 md:space-x-6">
                 <a
-                    href="#"
+                    href="#about"
+                    onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}
                     className="text-sm font-semibold text-gray-900 hover:text-emerald-600 dark:text-gray-100 dark:hover:text-emerald-400"
                 >
                     <span>About</span>
                 </a>
                 <a
-                    href="#"
+                    href="#predict"
+                    onClick={(e) => { e.preventDefault(); scrollToSection('predict'); }}
                     className="text-sm font-semibold text-gray-900 hover:text-emerald-600 dark:text-gray-100 dark:hover:text-emerald-400"
                 >
                     <span>Predict</span>
                 </a>
                 <a
-                    href="#"
+                    href="#how"
+                    onClick={(e) => { e.preventDefault(); scrollToSection('how'); }}
                     className="text-sm font-semibold text-gray-900 hover:text-emerald-600 dark:text-gray-100 dark:hover:text-emerald-400"
                 >
-                    <span>Group</span>
+                    <span>How</span>
                 </a>
                 </nav>
             </div>
@@ -58,18 +75,20 @@ export default function Header() {
                 </span>
               </h1>
               <h2 className="mx-auto text-xl leading-relaxed font-medium text-gray-700 lg:w-2/3 dark:text-gray-300">
-              Forecast crop yields with precision using advanced AI technology.
+              Forecast crop yields with 90% Accuracy using advanced AI technology.
               </h2>
             </div>
             <div className="flex flex-col gap-2 pt-10 pb-28 sm:flex-row sm:items-center sm:justify-center">
               <a
-                href="#"
+                href="#predict"
+                onClick={(e) => { e.preventDefault(); scrollToSection('predict'); }}
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-emerald-700 bg-emerald-700 px-7 py-3.5 leading-6 font-semibold text-white hover:border-emerald-600 hover:bg-emerald-600 hover:text-white focus:ring focus:ring-emerald-400/50 active:border-emerald-700 active:bg-emerald-700 dark:focus:ring-emerald-400/90"
               >
                 <span>Predict Now</span>
               </a>
               <a
-                href="#"
+                href="#about"
+                onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white px-7 py-3.5 leading-6 font-semibold text-gray-800 hover:border-gray-300 hover:text-gray-900 hover:shadow-sm focus:ring focus:ring-gray-300/25 active:border-gray-200 active:shadow-none dark:border-gray-700 dark:bg-transparent dark:text-gray-300 dark:hover:border-gray-600 dark:hover:text-gray-200 dark:focus:ring-gray-600/40 dark:active:border-gray-700"
               >
                 <span>Learn more</span>
@@ -81,5 +100,4 @@ export default function Header() {
         {/* END Hero Section: Centered with Simple Header */}
       </>
     );
-  }
-  
+}
