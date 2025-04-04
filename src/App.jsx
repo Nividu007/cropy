@@ -9,7 +9,7 @@ function App() {
 
   return (
     <main>
-      <div className="relative overflow-hidden bg-white dark:bg-gray-900 dark:text-gray-100">
+      <div className="relative overflow-hidden bg-gray-900 text-gray-100">
         <Header />
         <About />
         <Use />
